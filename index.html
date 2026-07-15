@@ -8,12 +8,21 @@
 <body>
 
     <h1>GrandGDPS demonlist</h1>
+    <div id="list"></div>
 
-    <div id="list">
-        <div class="level-card"><h3>#1 Society</h3><p>Автор: Neomarbilan</p></div>
-        <div class="level-card"><h3>#2 Tidal Wave</h3><p>Автор: OniLink</p></div>
-        <div class="level-card"><h3>#3 Acheron</h3><p>Автор: ryamu</p></div>
-    </div>
-
+    <script>
+        // Этот код загружает JSON и рисует его
+        fetch('levels.json')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('list');
+                list.innerHTML = data.map(item => `
+                    <div class="level-card">
+                        <h3>#${item.pos} ${item.name}</h3>
+                        <p>Автор: ${item.author} | ID: ${item.id}</p>
+                    </div>
+                `).join('');
+            });
+    </script>
 </body>
 </html>
