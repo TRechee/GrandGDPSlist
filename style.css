@@ -1,30 +1,42 @@
+/* Весь фон страницы — серый */
 body {
-    background-color: #121212;
+    background-color: #2b2b2b; /* Темно-серый фон */
     color: #ffffff;
     font-family: sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Высота на весь экран */
+    box-sizing: border-box;
 }
 
 h1 {
     color: #ff4444;
-    text-align: center; /* Центрируем текст заголовка */
-    margin-bottom: 30px;
+    text-align: center;
 }
 
+/* Сам островок — черный фон */
 #list {
+    background-color: #121212; /* Черный фон внутри островка */
     width: 100%;
     max-width: 600px;
-    margin: 0 auto; /* ЭТО ЦЕНТРИРУЕТ ВЕСЬ "ОСТРОВОК" */
+    height: 70vh; /* Ограничиваем высоту, чтобы появилась прокрутка */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
+/* Карточки уровней */
 .level-card {
     background-color: #1e1e1e;
     border-left: 5px solid #ff4444;
-    padding: 15px 20px;
+    padding: 15px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    text-align: center; /* Текст внутри карточек остается слева */
+    border-radius: 4px;
+    text-align: center;
 }
 
 h3 { margin: 0 0 5px 0; }
