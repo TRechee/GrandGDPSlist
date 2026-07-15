@@ -7,9 +7,10 @@
 </head>
 <body>
 
-    <h1>GrandGDPS demonlist</h1>
+    <h1>GrandGDPS Demonlist</h1>
     <div id="list"></div>
 
+    <!-- Модальное окно -->
     <div id="modal" class="hidden">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -20,23 +21,24 @@
     </div>
 
     <script>
-        let allLevels = [];
-        fetch('levels.json').then(res => res.json()).then(data => {
-            allLevels = data;
-            const list = document.getElementById('list');
-            list.innerHTML = data.map(item => `
-                <div class="level-card" onclick="openModal(${item.id})">
-                    <h3>#${item.pos} ${item.name}</h3>
-                    <p>Автор: ${item.author}</p>
-                </div>
-            `).join('');
-        });
+        const levels = [
+            { "id": 101, "pos": 1, "name": "Society", "author": "Neomarbilan", "yt": "dQw4w9WgXcQ" },
+            { "id": 102, "pos": 2, "name": "Tidal Wave", "author": "OniLink", "yt": "dQw4w9WgXcQ" }
+        ];
+
+        const list = document.getElementById('list');
+        list.innerHTML = levels.map(item => `
+            <div class="level-card" onclick="openModal(${item.id})">
+                <h3>#${item.pos} ${item.name}</h3>
+                <p>Автор: ${item.author}</p>
+            </div>
+        `).join('');
 
         function openModal(id) {
-            const level = allLevels.find(l => l.id === id);
+            const level = levels.find(l => l.id === id);
             document.getElementById('modal-title').innerText = level.name;
-            document.getElementById('modal-info').innerText = `Топ: ${level.pos} | ID: ${level.id} | Автор: ${level.author}`;
-            document.getElementById('modal-video').innerHTML = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${level.yt}" frameborder="0" allowfullscreen></iframe>`;
+            document.getElementById('modal-info').innerText = `ID: ${level.id} | Топ: ${level.pos}`;
+            document.getElementById('modal-video').innerHTML = `<iframe width="100%" height="250" src="https://www.youtube.com/embed/${level.yt}" frameborder="0" allowfullscreen></iframe>`;
             document.getElementById('modal').classList.remove('hidden');
         }
 
