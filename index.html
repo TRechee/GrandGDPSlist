@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demonlist</title>
+    <style>
+        body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
+        .level-card { background: #1e1e1e; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 5px solid #ff4444; }
+    </style>
+</head>
+<body>
+    <h1>Топ уровней</h1>
+    <div id="list"></div>
+
+    <script>
+        // Этот код просто берет файл levels.json и рисует его
+        fetch('levels.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('list').innerHTML = data.map(item => `
+                    <div class="level-card">
+                        <h3>#${item.pos} ${item.name}</h3>
+                        <p>Автор: ${item.author}</p>
+                    </div>
+                `).join('');
+            });
+    </script>
+</body>
+</html>
