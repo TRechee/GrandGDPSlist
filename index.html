@@ -10,18 +10,37 @@
     <h1>GrandGDPS demonlist</h1>
     <div id="list"></div>
 
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-info"></p>
+            <div id="modal-video"></div>
+        </div>
+    </div>
+
     <script>
-        fetch('levels.json')
-            .then(res => res.json())
-            .then(data => {
-                const list = document.getElementById('list');
-                list.innerHTML = data.map(item => `
-                    <div class="level-card">
-                        <h3>#${item.pos} ${item.name}</h3>
-                        <p>Автор: ${item.author} | ID: ${item.id}</p>
-                    </div>
-                `).join('');
-            });
+        let allLevels = [];
+        fetch('levels.json').then(res => res.json()).then(data => {
+            allLevels = data;
+            const list = document.getElementById('list');
+            list.innerHTML = data.map(item => `
+                <div class="level-card" onclick="openModal(${item.id})">
+                    <h3>#${item.pos} ${item.name}</h3>
+                    <p>Автор: ${item.author}</p>
+                </div>
+            `).join('');
+        });
+
+        function openModal(id) {
+            const level = allLevels.find(l => l.id === id);
+            document.getElementById('modal-title').innerText = level.name;
+            document.getElementById('modal-info').innerText = `Топ: ${level.pos} | ID: ${level.id} | Автор: ${level.author}`;
+            document.getElementById('modal-video').innerHTML = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${level.yt}" frameborder="0" allowfullscreen></iframe>`;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() { document.getElementById('modal').classList.add('hidden'); }
     </script>
 </body>
 </html>
