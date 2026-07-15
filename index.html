@@ -8,25 +8,12 @@
 <body>
 
     <h1>GrandGDPS demonlist</h1>
-    <div id="list"></div>
 
-    <script>
-        // Данные теперь прямо здесь
-        const levels = [
-            { "id": 101, "pos": 1, "name": "Society", "author": "Neomarbilan" },
-            { "id": 102, "pos": 2, "name": "Tidal Wave", "author": "OniLink" },
-            { "id": 103, "pos": 3, "name": "Acheron", "author": "ryamu" }
-            ]
-    
+    <div id="list">
+        <div class="level-card"><h3>#1 Society</h3><p>Автор: Neomarbilan | ID: 101</p></div>
+        <div class="level-card"><h3>#2 Tidal Wave</h3><p>Автор: OniLink | ID: 102</p></div>
+        <div class="level-card"><h3>#3 Acheron</h3><p>Автор: ryamu | ID: 103</p></div>
+    </div>
 
-        const list = document.getElementById('list');
-        list.innerHTML = levels.map(item => `
-            <div class="level-card">
-                <h3>#${item.pos} ${item.name}</h3>
-                <p>Автор: ${item.author} | ID: ${item.id}</p>
-            </div>
-        `).join('');
-    </script>
 </body>
 </html>
-,
