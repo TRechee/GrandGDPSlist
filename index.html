@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Demonlist</title>
-    <style>
-        body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
-        .level-card { background: #1e1e1e; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 5px solid #ff4444; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Топ уровней</h1>
-    <div id="list"></div>
 
-    <script>
-        // Этот код просто берет файл levels.json и рисует его
-        fetch('levels.json')
-            .then(r => r.json())
-            .then(data => {
-                document.getElementById('list').innerHTML = data.map(item => `
-                    <div class="level-card">
-                        <h3>#${item.pos} ${item.name}</h3>
-                        <p>Автор: ${item.author}</p>
-                    </div>
-                `).join('');
-            });
-    </script>
+    <h1>Топ сложных уровней</h1>
+
+    <div id="list">
+        <div class="level-card">
+            <h3>#1 Society</h3>
+            <p>Автор: Neomarbilan</p>
+        </div>
+        <div class="level-card">
+            <h3>#2 Tidal Wave</h3>
+            <p>Автор: OniLink</p>
+        </div>
+        <div class="level-card">
+            <h3>#3 Acheron</h3>
+            <p>Автор: ryamu</p>
+        </div>
+    </div>
+
 </body>
 </html>
