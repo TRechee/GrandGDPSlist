@@ -1,14 +1,8 @@
 [
-  { "pos": 1, "name": "Societey", "author": "Neomarbilan" },
-  { "pos": 2, "name": "Tidal Wave", "author": "OniLink" },
-  { "pos": 3, "name": "Acheron", "author": "ryamu" }
-  { "pos": 4, "name": "Achferon", "author": "ryamu" }
-  { "pos": 5, "name": "Acheron", "author": "ryamu" }
-  { "pos": 6, "name": "Acheron", "author": "ryamu" }
-  { "pos": 7, "name": "Acheron", "author": "ryamu" }
-  { "pos": 8, "name": "Acheron", "author": "ryamu" }
-  { "pos": 9, "name": "Acheron", "author": "ryamu" }
-  { "pos": 10, "name": "Acheron", "author": "ryamu" }
-  { "pos": 11, "name": "flamewall", "author": "ryamu" }
-  { "pos": 12, "name": "Tung Tung Sahur", "author": "ryamu" }
+  { "id": 101, "pos": 1, "name": "Society", "author": "Neomarbilan" },
+  { "id": 102, "pos": 2, "name": "Tidal Wave", "author": "OniLink" },
+  { "id": 103, "pos": 3, "name": "Acheron", "author": "ryamu" }
+  { "id": 101, "pos": 4, "name": "Society", "author": "Neomarbilan" },
+  { "id": 102, "pos": 5, "name": "Tidal Wave", "author": "OniLink" },
+  { "id": 103, "pos": 6, "name": "Acheron", "author": "ryamu" }
 ]
